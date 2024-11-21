@@ -85,7 +85,11 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-4 py-4">
               {[
-                { emoji: "🥒", text: "Cucum coding ", class: "animate-bounce" },
+                {
+                  emoji: "🥒",
+                  text: "Expert in code, and cucumbers",
+                  class: "animate-bounce",
+                },
                 { emoji: "🧑‍💻", text: "Debugging (with cucumbers)" },
                 { emoji: "🐱", text: "Cat-assisted Programming" },
                 { emoji: "🎸", text: "Rockstar (in my shower)" },
