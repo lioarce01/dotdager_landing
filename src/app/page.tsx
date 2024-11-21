@@ -15,10 +15,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Lumberjack from "@/components/Lumberjack";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -27,6 +29,9 @@ export default function Home() {
   if (!mounted) {
     return null;
   }
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-neutral-900 dark:via-neutral-950 dark:to-black text-zinc-900 dark:text-zinc-50 overflow-hidden">
@@ -54,25 +59,25 @@ export default function Home() {
           </div>
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-800 to-gray-500 dark:from-gray-300 dark:to-gray-500 bg-clip-text text-transparent">
-              Mariano "Pickle Whisperer" Villa
+              Mariano Villa
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
-              Dot Dager (The Dill-ightful)
+              Dot Dager "Cucumber Master"
             </p>
           </div>
           <div className="max-w-2xl text-center space-y-4">
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              👋 Hey there! I'm the guy who accidentally became a pickle expert
-              while trying to debug my code. When I'm not pickling or coding,
-              I'm probably trying to write a philosophy paper about why pickles
-              are the meaning of life.
+              👋 Hey there! I'm the guy who accidentally became a cucumber
+              expert while trying to debug my "code". When I'm not pickling or
+              coding, I'm probably trying to write a philosophy paper about why
+              pickles are the meaning of life.
             </p>
             <div className="flex flex-wrap justify-center gap-4 py-4">
               {[
-                { emoji: "🥒", text: "Pickle Coding", class: "animate-bounce" },
-                { emoji: "🧑‍💻", text: "Debugging (with vinegar)" },
+                { emoji: "🥒", text: "Cucum coding ", class: "animate-bounce" },
+                { emoji: "🧑‍💻", text: "Debugging (with cucumbers)" },
                 { emoji: "🐱", text: "Cat-assisted Programming" },
-                { emoji: "🎸", text: "Rockstar* (*in my shower)" },
+                { emoji: "🎸", text: "Rockstar (in my shower)" },
                 { emoji: "🤔", text: "Professional Overthinker" },
               ].map((item, index) => (
                 <Card
@@ -99,17 +104,17 @@ export default function Home() {
               {
                 href: "https://www.instagram.com/dager.32/",
                 icon: Instagram,
-                text: "Insta-gherkin",
+                text: "Picklegram",
               },
               {
                 href: "https://github.com/MarianoVilla",
                 icon: Github,
-                text: "Git-pickle-flow",
+                text: "PickleHub",
               },
               {
                 href: "https://www.twitch.tv/dagerxiv",
                 icon: Twitch,
-                text: "Twitch & Brine",
+                text: "PickeTV",
               },
               {
                 href: "https://x.com/Dager_32",
@@ -130,14 +135,22 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-16 text-center text-gray-600 dark:text-gray-400 italic">
-          "I put the 'dill' in 'code dillema' and the 'pickle' in
-          'pickle-culiar'" - Dot Dager, in a fever dream
+          "Dicen que el tamaño no importa, pero cuando se trata de pepinos...
+          siempre termino eligiendo el que llena más la ensalada." - Dot Dager
+          in a fever dream
         </div>
-        <div className="fixed bottom-4 right-4 animate-bounce">
-          <span className="text-6xl" role="img" aria-label="Pickle">
+        <div className="fixed bottom-4 right-4">
+          <button
+            onClick={openModal}
+            className="text-6xl animate-bounce"
+            role="img"
+            aria-label="Pickle"
+          >
             🥒
-          </span>
+          </button>
         </div>
+
+        <Lumberjack isOpen={isModalOpen} onClose={closeModal} />
       </main>
     </div>
   );

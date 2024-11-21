@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Dot Dager's Pickle Portfolio",
   description: "Where code meets pickles, and magic happens",
+  icons: "🥒",
 };
 
 export default function RootLayout({
