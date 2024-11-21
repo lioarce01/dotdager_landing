@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dot Dager's Pickle Portfolio",
-  description: "Where code meets pickles, and magic happens",
-  icons: "🥒",
+  title: "Cucum Dager Portfolio",
+  description: "Where code meets cucumber, and magic happens 🥒",
+  icons: "/favicon.png",
 };
 
 export default function RootLayout({

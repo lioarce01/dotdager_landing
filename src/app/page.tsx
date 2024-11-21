@@ -48,15 +48,26 @@ export default function Home() {
           <span className="sr-only">Toggle theme</span>
         </Button>
         <div className="flex flex-col items-center justify-center space-y-8">
-          <div className="relative size-48 md:size-64 overflow-hidden rounded-full border-8 border-gray-400 dark:border-neutral-800 shadow-2xl transform hover:rotate-[360deg] transition-transform duration-1000">
+          <div className="relative group size-48 md:size-64 overflow-hidden rounded-full border-8 border-gray-400 dark:border-neutral-800 shadow-2xl transform transition-transform duration-1000">
+            {/* Imagen inicial (la que se muestra normalmente) */}
             <Image
               alt="Dot Dager Profile"
-              className="object-cover"
+              className="object-cover w-full h-full transition-all duration-300 ease-in-out"
               height={256}
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dagger-perfil-mas-resolucion.jpg-uv0VS0zxG7vUpEQz4JW4pOXLDQDbi8.jpeg"
               width={256}
             />
+
+            {/* Imagen que aparece al hacer hover */}
+            <Image
+              alt="Dot Dager Profile Hover"
+              className="object-cover absolute inset-0 w-full h-full opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+              height={256}
+              src="/profile2.png"
+              width={256}
+            />
           </div>
+
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-800 to-gray-500 dark:from-gray-300 dark:to-gray-500 bg-clip-text text-transparent">
               Mariano Villa
@@ -82,7 +93,7 @@ export default function Home() {
               ].map((item, index) => (
                 <Card
                   key={index}
-                  className="bg-white/10 dark:bg-neutral-900 backdrop-blur-sm p-4 transform hover:scale-110 transition-transform duration-200"
+                  className="bg-white/10 dark:bg-neutral-900 backdrop-blur-sm p-4 transform hover:scale-105 transition-all duration-300 ease-in-out"
                 >
                   <span className={`text-2xl ${item.class || ""}`}>
                     {item.emoji}
@@ -125,7 +136,7 @@ export default function Home() {
               <Link key={index} href={link.href} target="_blank">
                 <Button
                   variant="outline"
-                  className="bg-white/10 dark:bg-neutral-900 backdrop-blur-sm border-gray-300 dark:border-neutral-700 hover:bg-white/20 dark:hover:bg-white/10 transition-colors duration-200"
+                  className="bg-white/10 dark:bg-neutral-900 backdrop-blur-sm border-gray-300 dark:border-neutral-700 hover:bg-white/20 dark:hover:bg-white/10 hover:scale-105 transition-all duration-300 ease-in-out"
                 >
                   <link.icon className="mr-2 size-4" />
                   {link.text}
