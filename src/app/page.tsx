@@ -68,7 +68,7 @@ export default function Home() {
               alt="Dot Dager Profile"
               className="object-cover w-full h-full transition-all duration-300 ease-in-out"
               height={256}
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dagger-perfil-mas-resolucion.jpg-uv0VS0zxG7vUpEQz4JW4pOXLDQDbi8.jpeg"
+              src="/dagger.webp"
               width={256}
             />
 
@@ -77,7 +77,7 @@ export default function Home() {
               alt="Dot Dager Profile Hover"
               className="object-cover absolute inset-0 w-full h-full opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
               height={256}
-              src="/profile2.png"
+              src="/profile2.webp"
               width={256}
             />
           </div>
@@ -109,22 +109,22 @@ export default function Home() {
                   {
                     emoji: "🧑‍💻",
                     text: "Debugging (with pepinos)",
-                    image: "/pepinos.png",
+                    image: "/pepinos.webp",
                   },
                   {
                     emoji: "🐱",
                     text: "Cat-assisted Programming",
-                    image: "/catAssisted.jpg",
+                    image: "/catAssisted.webp",
                   },
                   {
                     emoji: "🎸",
                     text: "Rockstar (in my house)",
-                    image: "/rockstar.jpg",
+                    image: "/rockstar.webp",
                   },
                   {
                     emoji: "🤔",
                     text: "Professional Overthinker",
-                    image: "/overthink.jpg",
+                    image: "/overthink.webp",
                   },
                 ].map((item, index) => (
                   <Card
@@ -193,7 +193,6 @@ export default function Home() {
             onClick={openModal}
             className="text-6xl animate-bounce"
             role="img"
-            aria-label="Pickle"
           >
             🥒
           </button>

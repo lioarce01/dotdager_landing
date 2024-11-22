@@ -33,7 +33,7 @@ const Lumberjack: React.FC<LumberjackProps> = ({ isOpen, onClose }) => {
           transition={{ duration: 0.3, delay: 0 }}
           className="fixed inset-0 bg-cover bg-center opacity-70"
           style={{
-            backgroundImage: "url('/bglumberjack.png')",
+            backgroundImage: "url('/bglumberjack.webp')",
           }}
         ></motion.div>
 
