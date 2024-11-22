@@ -89,15 +89,16 @@ export default function Home() {
               Mariano Villa
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
-              Dot Dager "Cucumber Master"
+              Dot Dager
             </p>
           </div>
           <div className="max-w-2xl text-center space-y-4">
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              👋 Hey there! I'm the guy who accidentally became a cucumber
-              expert while trying to debug my "code". When I'm not pickling or
-              coding, I'm probably trying to write a philosophy paper about why
-              pickles are the meaning of life.
+              👋 ¡Hey! Soy el tipo que, por accidente, terminó convirtiéndose en
+              un experto en pepinos mientras debugeaba mi "codigo". Cuando no
+              estoy codeando, seguro estoy escribiendo algún ensayo filosófico
+              sobre por qué los pepinos, obviamente, son el verdadero sentido de
+              la vida..
             </p>
             <div className="flex flex-col items-center justify-center space-y-8">
               {/* Tarjetas */}
@@ -105,12 +106,12 @@ export default function Home() {
                 {[
                   {
                     emoji: "🥒",
-                    text: "Expert in pepinos, and code",
+                    text: "Experto en pepinos, y codigo",
                     class: "animate-bounce",
                   },
                   {
                     emoji: "🧑‍💻",
-                    text: "Debugging (with pepinos)",
+                    text: "Debugging (con pepinos)",
                     image: "/pepinos.webp",
                   },
                   {
@@ -120,12 +121,12 @@ export default function Home() {
                   },
                   {
                     emoji: "🎸",
-                    text: "Rockstar (in my house)",
+                    text: "Rockstar (de mi casa)",
                     image: "/rockstar.webp",
                   },
                   {
                     emoji: "🤔",
-                    text: "Professional Overthinker",
+                    text: "Pensador profesional",
                     image: "/overthink.webp",
                   },
                 ].map((item, index) => (
