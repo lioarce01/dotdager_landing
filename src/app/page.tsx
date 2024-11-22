@@ -68,7 +68,7 @@ export default function Home() {
               alt="Dot Dager Profile"
               className="object-cover w-full h-full transition-all duration-300 ease-in-out"
               height={256}
-              src="/dagger.webp"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dagger-perfil-mas-resolucion.jpg-uv0VS0zxG7vUpEQz4JW4pOXLDQDbi8.jpeg"
               width={256}
               priority
             />
