@@ -16,11 +16,14 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Lumberjack from "@/components/Lumberjack";
+import { ImageModal } from "@/components/ImageModal";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -30,8 +33,19 @@ export default function Home() {
     return null;
   }
 
+  const handleCardClick = (imagePath: string | undefined) => {
+    console.log("Clicked image path:", imagePath);
+    if (imagePath) {
+      setSelectedImage(imagePath);
+      setIsImageModalOpen(true);
+    } else {
+      setSelectedImage(null);
+    }
+  };
+
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  const closeImageModal = () => setIsImageModalOpen(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-neutral-900 dark:via-neutral-950 dark:to-black text-zinc-900 dark:text-zinc-50 overflow-hidden">
@@ -83,30 +97,50 @@ export default function Home() {
               coding, I'm probably trying to write a philosophy paper about why
               pickles are the meaning of life.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 py-4">
-              {[
-                {
-                  emoji: "🥒",
-                  text: "Expert in code, and cucumbers",
-                  class: "animate-bounce",
-                },
-                { emoji: "🧑‍💻", text: "Debugging (with cucumbers)" },
-                { emoji: "🐱", text: "Cat-assisted Programming" },
-                { emoji: "🎸", text: "Rockstar (in my shower)" },
-                { emoji: "🤔", text: "Professional Overthinker" },
-              ].map((item, index) => (
-                <Card
-                  key={index}
-                  className="bg-white/10 dark:bg-neutral-900 backdrop-blur-sm p-4 transform hover:scale-105 transition-all duration-300 ease-in-out"
-                >
-                  <span className={`text-2xl ${item.class || ""}`}>
-                    {item.emoji}
-                  </span>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">
-                    {item.text}
-                  </p>
-                </Card>
-              ))}
+            <div className="flex flex-col items-center justify-center space-y-8">
+              {/* Tarjetas */}
+              <div className="flex flex-wrap justify-center gap-4 py-4">
+                {[
+                  {
+                    emoji: "🥒",
+                    text: "Expert in pepinos, and code",
+                    class: "animate-bounce",
+                  },
+                  {
+                    emoji: "🧑‍💻",
+                    text: "Debugging (with pepinos)",
+                    image: "/pepinos.png",
+                  },
+                  {
+                    emoji: "🐱",
+                    text: "Cat-assisted Programming",
+                    image: "/catAssisted.jpg",
+                  },
+                  {
+                    emoji: "🎸",
+                    text: "Rockstar (in my house)",
+                    image: "/rockstar.jpg",
+                  },
+                  {
+                    emoji: "🤔",
+                    text: "Professional Overthinker",
+                    image: "/overthink.jpg",
+                  },
+                ].map((item, index) => (
+                  <Card
+                    key={index}
+                    onClick={() => handleCardClick(item.image)}
+                    className="bg-white/10 dark:bg-neutral-900 backdrop-blur-sm p-4 transform hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer"
+                  >
+                    <span className={`text-2xl ${item.class || ""}`}>
+                      {item.emoji}
+                    </span>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      {item.text}
+                    </p>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
@@ -114,7 +148,7 @@ export default function Home() {
               {
                 href: "https://www.youtube.com/@DotDager",
                 icon: Youtube,
-                text: "Watch me pickle",
+                text: "Watch my pickle",
               },
               {
                 href: "https://www.instagram.com/dager.32/",
@@ -152,7 +186,7 @@ export default function Home() {
         <div className="mt-16 text-center text-gray-600 dark:text-gray-400 italic">
           "Dicen que el tamaño no importa, pero cuando se trata de pepinos...
           siempre termino eligiendo el que llena más la ensalada." - Dot Dager
-          in a fever dream
+          un dia cualquiera
         </div>
         <div className="fixed bottom-4 right-4">
           <button
@@ -166,6 +200,11 @@ export default function Home() {
         </div>
 
         <Lumberjack isOpen={isModalOpen} onClose={closeModal} />
+        <ImageModal
+          isOpen={isImageModalOpen}
+          onClose={closeImageModal}
+          imageSrc={selectedImage}
+        />
       </main>
     </div>
   );
