@@ -70,6 +70,7 @@ export default function Home() {
               height={256}
               src="/dagger.webp"
               width={256}
+              priority
             />
 
             {/* Imagen que aparece al hacer hover */}
@@ -79,6 +80,7 @@ export default function Home() {
               height={256}
               src="/profile2.webp"
               width={256}
+              priority
             />
           </div>
 

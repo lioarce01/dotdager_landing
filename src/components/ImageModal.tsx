@@ -47,6 +47,7 @@ export function ImageModal({ isOpen, onClose, imageSrc }: ImageModalProps) {
                 width={800}
                 height={600}
                 className="w-full h-auto"
+                priority
               />
             </motion.div>
           </motion.div>
