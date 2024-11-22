@@ -30,7 +30,7 @@ export function ImageModal({ isOpen, onClose, imageSrc }: ImageModalProps) {
           >
             <button
               onClick={onClose}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors duration-200"
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 dark:text-neutral-900 dark:hover:text-neutral-700 transition-colors duration-200"
             >
               <X size={24} />
               <span className="sr-only">Close</span>
